@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+.div2 {
+    display: none;
+    margin: auto;
+    width: 40%;
+}
+.div1 {
+    margin: auto;
+    width: 40%;
+}
+.center {
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+}
+.form1{
+    display: flex;
+}
+.input1{
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+}
+</style>
+<body>
+    
+<div class="center">
+    <h1>Test App</h1>
+    <p>How many check boxes do you want when clicked on a radio button?</p>
+    <input type="radio" name="tab" value="igotnone" onclick="show1();" />
+    Random 1
+    <input type="radio" name="tab" value="igottwo" onclick="show2();" />
+    Random with list
+</div>
+<hr>
+<div id="div1" class="div1">
+    <p>page 1</p>
+    <div class="form1">
+        <form action="{{ url_for("home")}}" method="post">
+            <label for="random-value1">Range 1:</label>
+            <input type="number" id="random_value1" name="random_value1" class="input1">
+            <span>To &nbsp;</span>
+            <label for="random-value2">Range 2:</label>
+            <input type="number" id="random_value2" name="random_value2" class="input1">
+            <button type="submit" name="random_range" value="submit_random">Random!</button>
+            
+        </form>
+    </div>
+</div>
+
+<div id="div2" class="div2">
+  <p>Okay Cool! Here are those two...</p>
+<input type="checkbox" value="Yes" name="one" class = 'check2'>
+One &nbsp;
+<input type="checkbox" value="Yes" name="two" class = 'check2'>
+Two
+</div>
+
+<script>
+function show1(){
+  document.getElementById('div2').style.display ='none';
+  document.getElementById('div1').style.display ='block';
+}
+function show2(){
+  document.getElementById('div2').style.display = 'block';
+  document.getElementById('div1').style.display = 'none';
+  var inputs = document.querySelectorAll('.check2');
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].checked = false;
+        }
+}
+
+</script>
+</body>
+</html>
