@@ -1,2 +1,2 @@
 # Random_generator_webapp
-Random Generator Web Application(Flask)
+Random Generator Web Application(Flask) - Not finish
